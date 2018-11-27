@@ -3,23 +3,20 @@ var friendsData = require("../data/friends");
 
 module.exports = function(app) {
   // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
-
   app.get("/api/friends", function(req, res) {
     res.json(friendsData);
   });
 
 
   app.post("/api/friends", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body parsing middleware
-     
-  
 
+    var bestMatch = {
+      name: "",
+      photo:"",
+      friendDifference: 1000
+    };
+  
         // Take newScores and loop through existing scores, comparing each value and coming up wi
       // a difference for each old score.
     
@@ -27,24 +24,27 @@ module.exports = function(app) {
       console.log(newScores)
       console.log("Printing out friends data")
 
-      var matchResults = 0;
+     
       for (i=0; i< friendsData.length ; i++ ) {
+        var matchResults = 0;
         for (x=0; x<newScores.length; x++) {
           matchResults = matchResults + Math.abs(friendsData[i].scores[x] - newScores[x]);
           console.log("Diff is " + matchResults)
+          if (matchResults <= bestMatch.friendDifference){
+            bestMatch.name = friendsData[i].name;
+            bestMatch.photo = friendsData[i].photo
+            bestMatch.friendDifference = matchResults;
+          }
         }
         console.log(req.body.scores)
         console.log(friendsData[i].scores);
+        console.log(bestMatch);
   
       }
 
       friendsData.push(req.body);
-      res.json(true);
-    
-
-
-
-    
+      res.json(bestMatch);
+  
   });
 
 
