@@ -1,7 +1,7 @@
 var friendsData = [
     {
-        "name":"new Member",
-        "photo":"http://www.artspecialday.com/9art/wp-content/uploads/2015/11/Rene-Magritte.jpg",
+        "name":"Younger Heart",
+        "photo":"https://i.guim.co.uk/img/uploads/2017/10/09/Stefan-Stern,-L.png?width=300&quality=85&auto=format&fit=max&s=078c9ddf5a8798628e5a4bf1812bd4a2",
         "scores":[
             '5',
             '1',
@@ -16,8 +16,8 @@ var friendsData = [
           ]
       },
       {
-        "name":"Member #2",
-        "photo":"https://www.wallpapersin4k.org/wp-content/uploads/2017/04/Sad-Boy-Face-Wallpaper-16.jpg",
+        "name":"Joy Walker",
+        "photo":"https://www.thefamouspeople.com/profiles/thumbs/paul-walker-6.jpg",
         "scores":[
             '4',
             '2',
@@ -33,7 +33,7 @@ var friendsData = [
       },
       {
         "name":"LONELY",
-        "photo":"https://i.pinimg.com/originals/69/67/38/696738063fb2d75ff204b643171ff775.jpg",
+        "photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8YrbbjZQXlR8rHygVlU_1hOQRs8htHsC8I9eEYtvfJhV3We-U",
         "scores":[
             '3',
             '1',
@@ -49,7 +49,7 @@ var friendsData = [
       },
       {
         "name": "HAPPY HOLIDAYS",
-        "photo": "http://stuffwriterslike.com/wp-content/uploads/2014/11/rudolph-holiday-party-fix-linkedin-profile.jpg",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpyQhTM5FDzDsUHQwvGxhkUjEfdxoLl46pe6m_-gdxtvIxiYYfUQ",
         "scores": [
             "3",
             "1",
@@ -62,7 +62,24 @@ var friendsData = [
             "4",
             "5"
         ]
-       }
+       },
+       {
+        "name": "Undecided",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ2fKK_aBJFgNdhOWJqOJCHQgcfJ75zRlQgNkqdgBW9GLeX19o",
+        "scores": [
+        "3",
+        "2",
+        "4",
+        "3",
+        "5",
+        "4",
+        "5",
+        "3",
+        "2",
+        "2"
+        ]
+        },
+        
 ]
 // Note how we export the array. This makes it accessible to other files using require.
 module.exports = friendsData;

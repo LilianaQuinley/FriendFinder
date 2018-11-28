@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <title>Survey</title>
-</head>
+    <title>FriendFinder</title>
+  
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  
+  </head>
 
 
 <body>
@@ -154,26 +162,29 @@
         </div>
     
         <!-- Modal -->
-        <div id="results-modal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-    
-            <!-- Modal content-->
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h2 class="modal-title"><strong>Best Match</strong></h2>
-            </div>
-            <div class="modal-body">
-                <h2 id="match-name"></h2>
-              <img id="match-img" src= "https://yt3.ggpht.com/a-/AN66SAzhZBuPvufdkn_hdlYWu-o9cSuU-KAH9Kb7OQ=s900-mo-c-c0xffffffff-rj-k-no" alt="">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+
+<!-- Modal -->
+    <div class="modal fade in" id="results-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Best Match</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+       
+            </button>
           </div>
-    
+          <div class="modal-body">
+              <h2 id="match-name"></h2>
+              <img id="match-img"  src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS95RyWBfcPIXiiYqKwsdvRImNHZ6Mta2U8jlLGWZzEKdwquUjW" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+          </div>
         </div>
     </div>
+    </div> 
+
   
     <script type="text/javascript">
       // Chosen CSS
@@ -200,7 +211,7 @@
       // Capture the form inputs
       $("#submit").on("click", function(event) {
         event.preventDefault();
-        console.log("IT IS CLICLINK AND WORKS")
+        console.log("IT IS CLICKING AND WORKS")
         // Form validation
         function validateForm() {
           var isValid = true;
@@ -245,11 +256,12 @@
             console.log(data)
   
             // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#match-name").text(data.name);
-            $("#match-img").attr("src", data.photo);
+            // $("#match-name").text(data.name);
+            // $("#match-img").attr("src", data.photo);
   
             // // Show the modal with the best match
-            $('#results-modal').modal('show');
+     
+            $('#results-modal').modal("show");
   
           });
         } else {
